@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Daily Teams Briefing Archive — CandyCo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Frank+Ruhl+Libre:wght@400;500;700&family=Yeseva+One&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #272838;
+  --shadow-grey-50: #F2F2F4;
+  --shadow-grey-100: #E0E1E6;
+  --shadow-grey-200: #C1C3CC;
+  --shadow-grey-600: #4E5268;
+  --emerald: #23CE6B;
+  --steel-blue: #1982C4;
+  --golden-yellow: #FFCA3A;
+  --racing-red: #FF0022;
+  --background: #FFFFFF;
+  --foreground: #1E293B;
+  --muted-text: #64748B;
+  --on-primary: #FFFFFF;
+  --fg-1: var(--foreground);
+  --fg-2: var(--shadow-grey-600);
+  --fg-3: var(--muted-text);
+  --bg-1: var(--background);
+  --border-subtle: var(--shadow-grey-100);
+  --border-default: var(--shadow-grey-200);
+  --font-sans: "Assistant", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Frank Ruhl Libre", Georgia, "Times New Roman", serif;
+  --font-display: "Yeseva One", "Frank Ruhl Libre", Georgia, serif;
+  --radius: 0.625rem;
+  --radius-pill: 999px;
+  --shadow-sm: 0 2px 4px rgba(39, 40, 56, 0.08), 0 1px 2px rgba(39, 40, 56, 0.04);
+  --shadow: 0 4px 12px rgba(39, 40, 56, 0.10), 0 2px 4px rgba(39, 40, 56, 0.06);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--shadow-grey-50); color: var(--fg-1); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+
+.page { max-width: 920px; margin: 0 auto; padding: 48px 24px 64px 24px; }
+
+.hero-bar { background: var(--primary); color: var(--on-primary); border-radius: var(--radius); padding: 28px 32px; margin-bottom: 28px; box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.hero-bar .brand img { height: 40px; display: block; }
+.hero-bar .meta { text-align: right; font-size: 13px; line-height: 1.5; opacity: 0.78; }
+.hero-bar .meta strong { color: var(--golden-yellow); font-weight: 600; }
+
+h1 { font-family: var(--font-display); font-weight: 400; font-size: 44px; line-height: 1.05; letter-spacing: -0.01em; margin: 0 0 12px 0; color: var(--fg-1); }
+.lead { font-family: var(--font-serif); font-size: 17px; line-height: 1.55; color: var(--fg-2); margin: 0 0 32px 0; max-width: 680px; }
+
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-3); margin-bottom: 10px; }
+
+.list { display: flex; flex-direction: column; gap: 12px; }
+
+.item { background: var(--bg-1); border: 1px solid var(--border-subtle); border-radius: var(--radius); padding: 18px 22px; box-shadow: var(--shadow-sm); display: flex; justify-content: space-between; align-items: center; gap: 20px; text-decoration: none; color: inherit; transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease; }
+.item:hover { transform: translateY(-1px); box-shadow: var(--shadow); border-color: var(--border-default); }
+.item .left { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.item .date { font-family: var(--font-display); font-size: 22px; line-height: 1.1; color: var(--fg-1); }
+.item .summary { font-family: var(--font-serif); font-size: 14px; color: var(--fg-2); line-height: 1.45; }
+.item .right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.tag { font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 9px; border-radius: var(--radius-pill); background: var(--shadow-grey-50); color: var(--shadow-grey-600); white-space: nowrap; }
+.tag.red { background: #FFE5E9; color: #A30016; }
+.tag.yellow { background: #FFF7DB; color: #7A5800; }
+.tag.green { background: #E8FAF0; color: #176B3A; }
+.arrow { color: var(--steel-blue); font-size: 20px; font-weight: 700; }
+
+.sources { margin-top: 36px; font-family: var(--font-serif); font-size: 13px; color: var(--fg-2); border-top: 1px solid var(--border-default); padding-top: 16px; line-height: 1.55; }
+.sources strong { color: var(--fg-1); font-family: var(--font-sans); font-weight: 600; }
+
+@media (max-width: 600px) {
+  h1 { font-size: 32px; }
+  .item { flex-direction: column; align-items: flex-start; }
+  .item .right { width: 100%; justify-content: space-between; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero-bar">
+    <div class="brand">
+      <img src="assets/candyco-logo-black.png" alt="CandyCo" style="filter: brightness(0) invert(1);">
+    </div>
+    <div class="meta">
+      <div class="eyebrow" style="color: rgba(255,255,255,0.55); margin-bottom: 4px;">Operations &middot; FSQA</div>
+      <strong>Daily Teams Briefing Archive</strong>
+    </div>
+  </div>
+
+  <h1>Daily plant briefings</h1>
+  <p class="lead">Twenty-four-hour rollups pulled from the eleven Information Exchange Teams chats across L1 Caramel, L2 Eco, and L3 Chocolate. Each entry covers the COO operational pulse and the FSQA priority alerts for that day.</p>
+
+  <div class="eyebrow">Archive</div>
+  <div class="list">
+
+    <a class="item" href="2026-05-01-plant-briefing.html">
+      <div class="left">
+        <div class="date">May 1, 2026</div>
+        <div class="summary">Metal-in-bar event on L3 ML1. L3 ML4 and L2 FFS both down. Recurring burnt-Graham pattern on Grinding lot FEB1727TA3.</div>
+      </div>
+      <div class="right">
+        <span class="tag red">2 lines down</span>
+        <span class="tag yellow">2 FM events</span>
+        <span class="arrow">&rarr;</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="sources">
+    <strong>About this archive.</strong> Built daily from Teams Information Exchange chats via the Microsoft Graph API. Styled with the CandyCo Design System. Source repository: <a href="https://github.com/d-scott-code/daily-teams-briefing-archive" style="color: var(--steel-blue);">github.com/d-scott-code/daily-teams-briefing-archive</a>.
+  </div>
+
+</div>
+</body>
+</html>
