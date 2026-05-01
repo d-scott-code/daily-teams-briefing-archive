@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Plant Briefing — May 1, 2026 — CandyCo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Frank+Ruhl+Libre:wght@400;500;700&family=Yeseva+One&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+:root {
+  --primary: #272838;
+  --primary-light: #3A3D50;
+  --primary-dark: #1A1C27;
+  --shadow-grey-50: #F2F2F4;
+  --shadow-grey-100: #E0E1E6;
+  --shadow-grey-200: #C1C3CC;
+  --shadow-grey-300: #A2A5B3;
+  --shadow-grey-400: #83879A;
+  --shadow-grey-500: #646981;
+  --shadow-grey-600: #4E5268;
+  --shadow-grey-700: #3A3D50;
+  --emerald: #23CE6B;
+  --steel-blue: #1982C4;
+  --golden-yellow: #FFCA3A;
+  --racing-red: #FF0022;
+  --background: #FFFFFF;
+  --foreground: #1E293B;
+  --muted-text: #64748B;
+  --on-primary: #FFFFFF;
+  --fg-1: var(--foreground);
+  --fg-2: var(--shadow-grey-600);
+  --fg-3: var(--muted-text);
+  --fg-inverse: var(--on-primary);
+  --bg-1: var(--background);
+  --border-subtle: var(--shadow-grey-100);
+  --border-default: var(--shadow-grey-200);
+  --success: #23CE6B; --warning: #FFCA3A; --error: #FF0022; --info: #1982C4;
+  --success-bg: #E8FAF0; --warning-bg: #FFF7DB; --error-bg: #FFE5E9; --info-bg: #E3F1FB;
+  --font-sans: "Assistant", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Frank Ruhl Libre", Georgia, "Times New Roman", serif;
+  --font-display: "Yeseva One", "Frank Ruhl Libre", Georgia, serif;
+  --radius-xs: 0.25rem; --radius-sm: 0.375rem; --radius: 0.625rem; --radius-lg: 0.875rem; --radius-pill: 999px;
+  --shadow-sm: 0 2px 4px rgba(39, 40, 56, 0.08), 0 1px 2px rgba(39, 40, 56, 0.04);
+}
+
+@page { size: letter; margin: 0.5in; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg-1); color: var(--fg-1); font-family: var(--font-sans); font-size: 9.5pt; line-height: 1.45; -webkit-font-smoothing: antialiased; }
+
+h1 { font-family: var(--font-display); font-weight: 400; font-size: 24pt; line-height: 1.05; letter-spacing: -0.01em; margin: 0 0 4pt 0; color: var(--fg-1); }
+h2 { font-family: var(--font-sans); font-weight: 700; font-size: 14pt; line-height: 1.2; letter-spacing: -0.015em; margin: 14pt 0 6pt 0; color: var(--fg-1); page-break-after: avoid; }
+h3 { font-family: var(--font-sans); font-weight: 700; font-size: 11pt; margin: 10pt 0 4pt 0; color: var(--fg-1); page-break-after: avoid; }
+h4 { font-family: var(--font-sans); font-weight: 600; font-size: 10pt; margin: 4pt 0 3pt 0; color: var(--fg-1); }
+p { margin: 3pt 0 7pt 0; }
+ul, ol { margin: 4pt 0 8pt 0; padding-left: 16pt; }
+li { margin-bottom: 2pt; }
+
+.eyebrow { font-size: 8pt; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-3); font-family: var(--font-sans); }
+.lead { font-family: var(--font-serif); font-size: 11pt; line-height: 1.5; color: var(--fg-2); margin: 4pt 0 10pt 0; font-weight: 400; }
+
+.cover-head { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border-default); padding-bottom: 10pt; margin-bottom: 12pt; }
+.cover-head .brand img { height: 38px; width: auto; display: block; }
+.cover-head .doc-meta { font-size: 8.5pt; color: var(--fg-2); text-align: right; line-height: 1.4; }
+
+.meta-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12pt; padding: 8pt 0; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); margin-bottom: 12pt; }
+.meta-strip .item .eyebrow { margin-bottom: 2pt; font-size: 7.5pt; }
+.meta-strip .item .v { font-size: 9.5pt; font-weight: 600; color: var(--fg-1); }
+
+.hero { background: var(--primary); color: var(--fg-inverse); border-radius: var(--radius-lg); padding: 16pt 20pt; margin: 8pt 0 12pt 0; page-break-inside: avoid; }
+.hero .eyebrow { color: rgba(255,255,255,0.55); margin-bottom: 4pt; }
+.hero .headline { font-family: var(--font-display); font-size: 16pt; line-height: 1.18; letter-spacing: -0.005em; margin: 0; color: var(--fg-inverse); }
+.hero .headline .accent { color: var(--golden-yellow); }
+
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10pt; margin: 6pt 0 12pt 0; page-break-inside: avoid; }
+.stat { background: var(--bg-1); border: 1px solid var(--border-subtle); border-radius: var(--radius); padding: 12pt 12pt 10pt 12pt; box-shadow: var(--shadow-sm); }
+.stat .eyebrow { font-size: 7.5pt; margin-bottom: 6pt; }
+.stat .num { font-family: var(--font-sans); font-weight: 800; font-size: 22pt; line-height: 1; letter-spacing: -0.025em; font-variant-numeric: tabular-nums; color: var(--fg-1); }
+.stat .num.error { color: var(--racing-red); }
+.stat .num.warning { color: #B07F00; }
+.stat .num.success { color: #176B3A; }
+.stat .sub { margin-top: 6pt; font-size: 8pt; color: var(--fg-2); line-height: 1.35; }
+
+.cap { display: inline-flex; align-items: center; gap: 5px; font-family: var(--font-sans); font-size: 8pt; font-weight: 600; padding: 1pt 7pt; border-radius: var(--radius-pill); line-height: 1.4; white-space: nowrap; }
+.cap .dot { width: 5px; height: 5px; border-radius: 50%; display: inline-block; }
+.cap.success { background: var(--success-bg); color: #176B3A; }
+.cap.warning { background: var(--warning-bg); color: #7A5800; }
+.cap.error { background: var(--error-bg); color: #A30016; }
+.cap.info { background: var(--info-bg); color: #0B5180; }
+.cap.neutral { background: var(--shadow-grey-50); color: var(--shadow-grey-700); }
+.cap .dot.success { background: var(--success); }
+.cap .dot.warning { background: var(--warning); }
+.cap .dot.error { background: var(--error); }
+.cap .dot.info { background: var(--info); }
+
+table { width: 100%; border-collapse: collapse; margin: 4pt 0 10pt 0; font-size: 8.5pt; page-break-inside: avoid; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); overflow: hidden; }
+thead th { background: var(--shadow-grey-50); color: var(--fg-1); text-align: left; font-weight: 600; font-size: 8pt; padding: 5pt 7pt; border-bottom: 1px solid var(--border-default); }
+tbody td { padding: 4pt 7pt; border-bottom: 1px solid var(--border-subtle); vertical-align: top; color: var(--fg-1); }
+tbody tr:last-child td { border-bottom: none; }
+
+.card { background: var(--bg-1); border: 1px solid var(--border-subtle); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 10pt 12pt 8pt 12pt; margin: 6pt 0 10pt 0; page-break-inside: avoid; }
+.card.alert-red { border-left: 4px solid var(--racing-red); }
+.card.alert-yellow { border-left: 4px solid var(--golden-yellow); }
+.card.alert-green { border-left: 4px solid var(--emerald); }
+.card .alert-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4pt; }
+.card .caption { font-size: 7.5pt; color: var(--fg-2); margin-top: 4pt; line-height: 1.4; }
+
+.line-block { border: 1px solid var(--border-subtle); border-radius: var(--radius); padding: 10pt 12pt; margin: 6pt 0 8pt 0; page-break-inside: avoid; background: var(--bg-1); }
+.line-block .line-head { display: flex; justify-content: space-between; align-items: center; padding-bottom: 5pt; margin-bottom: 5pt; border-bottom: 1px solid var(--border-subtle); }
+.line-block .line-head .title { font-weight: 700; font-size: 10pt; color: var(--fg-1); }
+.line-block .line-head .sub { font-size: 8pt; color: var(--fg-2); }
+
+.audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; margin: 6pt 0 10pt 0; }
+.audience { background: var(--bg-1); border: 1px solid var(--border-subtle); border-radius: var(--radius); padding: 10pt 12pt; box-shadow: var(--shadow-sm); page-break-inside: avoid; }
+.audience .head { display: flex; align-items: center; gap: 6pt; margin-bottom: 6pt; padding-bottom: 5pt; border-bottom: 1px solid var(--border-subtle); }
+.audience .head .icon { width: 18px; height: 18px; color: var(--fg-1); flex-shrink: 0; }
+.audience .head .title { font-weight: 700; font-size: 10pt; color: var(--fg-1); }
+.audience ul { margin: 4pt 0 0 0; padding-left: 14pt; font-size: 8.5pt; line-height: 1.5; }
+.audience li { margin-bottom: 3pt; color: var(--fg-1); }
+.audience li::marker { color: var(--shadow-grey-300); }
+
+.actions thead th { background: var(--primary); color: var(--fg-inverse); border-bottom-color: var(--primary); }
+.actions td.priority { width: 22pt; text-align: center; font-weight: 800; color: var(--fg-1); font-variant-numeric: tabular-nums; }
+.actions td.owner { font-weight: 600; color: var(--primary); }
+
+.footnote { font-family: var(--font-serif); font-size: 8pt; color: var(--fg-2); border-top: 1px solid var(--border-subtle); padding-top: 6pt; margin-top: 12pt; line-height: 1.5; }
+.footnote strong { color: var(--fg-1); font-family: var(--font-sans); font-weight: 600; }
+
+.sheet { background: var(--bg-1); width: 8.5in; min-height: 11in; padding: 0.5in; box-sizing: border-box; page-break-after: always; page-break-inside: avoid; overflow: hidden; position: relative; }
+.sheet:last-child { page-break-after: auto; }
+.sheet-footer { position: absolute; bottom: 0.25in; left: 0.5in; right: 0.5in; display: flex; justify-content: space-between; align-items: center; font-size: 7.5pt; color: var(--fg-3); font-family: var(--font-sans); border-top: 1px solid var(--border-subtle); padding-top: 6pt; }
+.sheet-footer .doc { color: var(--fg-2); }
+.sheet-footer .page-no { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--fg-1); }
+
+.divider { border-top: 1px solid var(--border-subtle); margin: 10pt 0; }
+
+@media print { body { font-size: 9.5pt; background: white; padding: 0; margin: 0; } .sheet { width: auto; height: auto; min-height: 0; padding: 0; margin: 0; box-shadow: none; border-radius: 0; } .sheet-footer { bottom: 0; left: 0; right: 0; } .hero, .stat, .card, .audience, .line-block { box-shadow: none; } }
+@media screen { body { background: var(--shadow-grey-50); padding: 24px 0; } .doc-frame { width: 8.5in; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; } .sheet { box-shadow: 0 4px 18px rgba(39, 40, 56, 0.16); border-radius: 4px; } }
+</style>
+</head>
+<body>
+<div class="doc-frame">
+
+<!-- ============================================================
+     SHEET 1 — COVER + EXECUTIVE SUMMARY
+     ============================================================ -->
+<section class="sheet">
+
+  <div class="cover-head">
+    <div class="brand">
+      <img src="assets/candyco-logo-black.png" alt="CandyCo">
+    </div>
+    <div class="doc-meta">
+      <div class="eyebrow" style="font-size: 7pt;">Operations &middot; FSQA</div>
+      <div>May 1, 2026 &nbsp;&middot;&nbsp; All plants &nbsp;&middot;&nbsp; All lines</div>
+    </div>
+  </div>
+
+  <h1>Daily plant briefing</h1>
+  <p class="lead">24-hour rollup pulled from all eleven Information Exchange chats across L1 Caramel, L2 Eco, and L3 Chocolate. Distribution: Chad Stone (COO), Kathleen Gilbert (VP FSQA), Aubrey Howe, Scott Maxfield.</p>
+
+  <div class="meta-strip">
+    <div class="item"><div class="eyebrow">Period</div><div class="v">Apr 30 &ndash; May 1, 2026</div></div>
+    <div class="item"><div class="eyebrow">Plants</div><div class="v">L1, L2, L3 (3)</div></div>
+    <div class="item"><div class="eyebrow">Lines covered</div><div class="v">11</div></div>
+    <div class="item"><div class="eyebrow">Source</div><div class="v">Teams Info Exchange chats</div></div>
+  </div>
+
+  <h2>Executive summary</h2>
+
+  <div class="hero">
+    <div class="eyebrow">The single most important finding</div>
+    <p class="headline">Metal detector on L3 ML1 caught a <span class="accent">foreign metal object</span> in a rejected bar this morning &mdash; system worked, root cause unknown.</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="eyebrow">Lines down</div>
+      <div class="num error">2</div>
+      <div class="sub">L2 FFS, L3 ML4 &middot; multi-hour impact</div>
+    </div>
+    <div class="stat">
+      <div class="eyebrow">FM events</div>
+      <div class="num warning">2</div>
+      <div class="sub">Metal in bar + recurring burnt Graham</div>
+    </div>
+    <div class="stat">
+      <div class="eyebrow">Pouch scrap, FFS</div>
+      <div class="num warning">1,403</div>
+      <div class="sub">302 overnight + 1,101 midshift</div>
+    </div>
+    <div class="stat">
+      <div class="eyebrow">Win to protect</div>
+      <div class="num success">3</div>
+      <div class="sub">QC catches before product moved</div>
+    </div>
+  </div>
+
+  <h3>Top three improvement opportunities</h3>
+  <table>
+    <thead>
+      <tr><th style="width: 30%;">Opportunity</th><th style="width: 22%;">Estimated impact</th><th>Why it matters</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>L3 ML1 metal-FM root cause</strong></td><td><span class="cap error"><span class="dot error"></span>Hold risk</span></td><td>MD did its job. Without RCA we don't know if more bars upstream contain metal.</td></tr>
+      <tr><td><strong>L2 FFS changeover quality</strong></td><td><span class="cap warning"><span class="dot warning"></span>~1 shift lost</span></td><td>Film routed wrong + pouches not on floor &mdash; 1,403 scrap pouches and most of first shift down.</td></tr>
+      <tr><td><strong>L3 ingredient pre-stage</strong></td><td><span class="cap warning"><span class="dot warning"></span>2 lines impacted</span></td><td>Cold chocolate (ML2) and cold cream (ML4) both delayed start. WH staging temp needs review.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sheet-footer"><span class="doc">Plant briefing &middot; 2026-05-01</span><span class="page-no">Page 1 of 4</span></div>
+</section>
+
+<!-- ============================================================
+     SHEET 2 — COO BRIEFING (LINE-BY-LINE)
+     ============================================================ -->
+<section class="sheet">
+
+  <h2>COO briefing &mdash; line by line</h2>
+  <p>Operational pulse for Chad Stone. Lines flagged red are down or carrying serious problems; yellow are running with friction; green are clean.</p>
+
+  <h3>Lindon 1 &mdash; Caramel</h3>
+
+  <div class="line-block">
+    <div class="line-head"><span class="title">S1 (Sollich 1)</span><span class="cap warning"><span class="dot warning"></span>Running with caught-early issue</span></div>
+    <ul>
+      <li><strong>Water leak found during testing</strong> on the new 7 pipe install &mdash; reserve tank and a few valves leaking (Dakota Adair).</li>
+      <li>Marcos Jimenez verified via video that the leak is unrelated to yesterday's installation work; broken seal on one valve doesn't affect today's production. Cleared to cook.</li>
+      <li><em>Celebrate:</em> Dakota Adair caught the leak during commissioning water test. Marcos independently verified root cause via video before clearing the line.</li>
+    </ul>
+  </div>
+
+  <div class="line-block">
+    <div class="line-head"><span class="title">S2 (Sollich 2)</span><span class="cap warning"><span class="dot warning"></span>Material and equipment friction</span></div>
+    <ul>
+      <li>SCM pump-over slow &mdash; totes 12&ndash;15 min, then 6&ndash;8 min after switching. Joseph Scott paused to catch up.</li>
+      <li>Jar V2 &rarr; V3 transition handled with proper change-control: Angelica Perez confirmed dimensions, water test, lid fit, consulted Candon Watt for approval, +1g TARE on CW. SafetyChain Rev 02 by Rafael Baretta.</li>
+      <li>Pallet/tray shortage overnight &mdash; Springville transfer didn't arrive until ~5 PM.</li>
+      <li>Check weighter at S2 jar not recognizing all weights, causing accumulation. Maintenance asked to look.</li>
+      <li><em>Celebrate:</em> Conner Boyd ran the throughput math (1,950 jars/hr at 1.2x vs. 1,872 goal). Angelica Perez on V3 jar change-control.</li>
+    </ul>
+  </div>
+
+  <div class="line-block">
+    <div class="line-head"><span class="title">S3 (Sollich 3)</span><span class="cap warning"><span class="dot warning"></span>Seal and pallet issues</span></div>
+    <ul>
+      <li><strong>Matrix 3 had plastic stuck on sealing plates</strong> &mdash; 318 scrap bags by 8 AM, plus 55 (10 AM) and 83 (11 AM). Operator scraped the plastic off; sealing now correct.</li>
+      <li>MM3/MM4 fill position wrong &mdash; adjusted from 5th to 4th fill position and re-centered cone.</li>
+      <li>Peco pallet shortage &mdash; switched to white pallets to keep line up; will restack once Tiffanee gets more in.</li>
+      <li>One MT AD2 cover pin fell during closing; all parts accounted for, maintenance replacing.</li>
+      <li><em>Celebrate:</em> S3 Pack operator caught and cleared the Matrix 3 sealing-plate plastic before scrap got worse.</li>
+    </ul>
+  </div>
+
+  <h3>Lindon 2 &mdash; Eco</h3>
+
+  <div class="line-block">
+    <div class="line-head"><span class="title">ML2</span><span class="cap warning"><span class="dot warning"></span>Slow start, recovered</span></div>
+    <ul>
+      <li>Late start overnight &mdash; chocolate drums still solid when truck arrived ~1:27 AM. Brandon Lance turned warmers up; line waited ~1 hour for temper.</li>
+      <li>Tempermeter filter blew &mdash; maintenance blew it off and reinstalled.</li>
+      <li><strong>FW chain not reinstalled</strong> at end of 3rd shift &mdash; maintenance got pulled to FFS. Gustavo Rodas asked Alex Mendoza to have his team finish it.</li>
+      <li>Bequet wrap trial board posted by Alan Todd for tomorrow on ML3.</li>
+    </ul>
+  </div>
+
+  <div class="line-block">
+    <div class="line-head"><span class="title">ML3</span><span class="cap warning"><span class="dot warning"></span>Down at end of order</span></div>
+    <ul>
+      <li>Hit 68 SS, line down and molds being removed.</li>
+      <li>One mixer slipped from operator's hand during depositor disassembly &mdash; winglet bent, maintenance straightening.</li>
+      <li>Lot change verified, water test passed, weight/dimensions/packaging in spec.</li>
+      <li><em>Coach:</em> mixer-handling during depositor breakdown &mdash; single point of failure when one operator carries.</li>
+    </ul>
+  </div>
+
+  <div class="sheet-footer"><span class="doc">Plant briefing &middot; 2026-05-01</span><span class="page-no">Page 2 of 4</span></div>
+</section>
+
+<!-- ============================================================
+     SHEET 3 — COO BRIEFING (continued) + SCORECARD
+     ============================================================ -->
+<section class="sheet">
+
+  <h3>Lindon 2 &mdash; Eco (continued)</h3>
+
+  <div class="line-block">
+    <div class="line-head"><span class="title">FFS</span><span class="cap error"><span class="dot error"></span>Down most of morning</span></div>
+    <ul>
+      <li><strong>Film routed incorrectly during changeover</strong> &mdash; Fernando, Lance, Justin pulled the FFS apart. Re-routing took most of first shift.</li>
+      <li><strong>Pouches not delivered for 5.1 oz changeover</strong> &mdash; on a separate truck. ETA 9:30 missed; Luis Pino submitted Level 1 (~4 hr lead).</li>
+      <li>Recurring lost nut on FFS &mdash; Raymond Fleming flagged.</li>
+      <li>Scrap: 302 (overnight), 1,101 pouches (midshift). Line running well by 13:15 &mdash; pouches look great.</li>
+      <li><em>Coach:</em> changeover quality &mdash; second time film routing has cost us a shift; need a dual-sign-off step. Material planning &mdash; pouches and boxes for the 5.1 oz needed to be on the floor before the changeover started.</li>
+    </ul>
+  </div>
+
+  <div class="line-block">
+    <div class="line-head"><span class="title">Grinding</span><span class="cap success"><span class="dot success"></span>Running &mdash; FSQA pattern flagged</span></div>
+    <ul>
+      <li>Container 10139, lot FEB1727TA3 &mdash; multiple boxes processed overnight.</li>
+      <li>Burnt Graham pieces found at the nozzle in boxes #3, #5, and #17. Pattern is consistent across two days.</li>
+      <li><em>Celebrate:</em> Claudio Tovar &mdash; meticulous box-by-box logging.</li>
+    </ul>
+  </div>
+
+  <h3>Lindon 3 &mdash; Chocolate</h3>
+
+  <div class="line-block">
+    <div class="line-head"><span class="title">ML1</span><span class="cap warning"><span class="dot warning"></span>FM event detected and contained</span></div>
+    <ul>
+      <li><strong>Metal found in a bar</strong> &mdash; metal detector opened, foreign material (metal) found in one of the rejected bars. Isis Oses confirmed; QC inspecting (~10:37 AM Mountain).</li>
+      <li>FW 40910-V6 inventory tight &mdash; ~3 hrs on hand, plus ~4 hrs from L2 transfer.</li>
+      <li>Lot/Best By verified correct, water test passed.</li>
+      <li><em>Celebrate:</em> Isis Oses opened the MD immediately and engaged QC.</li>
+    </ul>
+  </div>
+
+  <div class="line-block">
+    <div class="line-head"><span class="title">ML4 (Start-up)</span><span class="cap error"><span class="dot error"></span>Down &mdash; cold cream and alarms</span></div>
+    <ul>
+      <li>Late product to demolding (8:20 AM), down at 8:25 AM.</li>
+      <li><strong>Cream is cold/solid in the pallets</strong> &mdash; every pallet from WH is the same. Ingredient tank at ~45%. Maintenance + Preston Elmer working it.</li>
+      <li>Mold jam after cold stamp &mdash; cleared. Cooling cabinet 4 needed screws tightened.</li>
+      <li><em>Coach:</em> WH/cream temperature management. Same condition Brandon hit on ML2 overnight. We need warm-room or pre-stage step for cream and chocolate ingredients.</li>
+    </ul>
+  </div>
+
+  <div class="line-block">
+    <div class="line-head"><span class="title">MF Matrix</span><span class="cap success"><span class="dot success"></span>Running</span></div>
+    <ul>
+      <li>Finished item 30448; level 1 clean completed and QA-inspected.</li>
+      <li>Open question: cleaning standard between SKUs (Chad's ask). Rich Brierley confirmed Level 1 with no ADP &mdash; worth confirming this matches the cross-contamination risk for the SKU pair.</li>
+      <li>Nathan Gevenois cleared most rework supersacs; 1st shift can run remaining 6 tomorrow.</li>
+    </ul>
+  </div>
+
+  <h2>Summary scorecard</h2>
+  <table>
+    <thead>
+      <tr><th>Plant</th><th>Line</th><th>Status</th><th>Top issue</th><th>Top person</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>L1</td><td>S1</td><td><span class="cap warning"><span class="dot warning"></span>Yellow</span></td><td>Reserve tank water leak found during commissioning</td><td>Dakota Adair / Marcos Jimenez</td></tr>
+      <tr><td>L1</td><td>S2</td><td><span class="cap warning"><span class="dot warning"></span>Yellow</span></td><td>SCM pump-over slow + jar V3 transition</td><td>Conner Boyd</td></tr>
+      <tr><td>L1</td><td>S3</td><td><span class="cap warning"><span class="dot warning"></span>Yellow</span></td><td>Matrix 3 sealing-plate plastic &mdash; 318 scrap bags</td><td>S3 Pack operator</td></tr>
+      <tr><td>L2</td><td>ML2</td><td><span class="cap warning"><span class="dot warning"></span>Yellow</span></td><td>Late start &mdash; chocolate not tempered</td><td>Brandon Lance</td></tr>
+      <tr><td>L2</td><td>ML3</td><td><span class="cap warning"><span class="dot warning"></span>Yellow</span></td><td>Mixer dropped during disassembly</td><td>Claudio Tovar</td></tr>
+      <tr><td>L2</td><td>FFS</td><td><span class="cap error"><span class="dot error"></span>Red</span></td><td>Film routed wrong + pouches not delivered</td><td>Mathew Draper</td></tr>
+      <tr><td>L2</td><td>Grinding</td><td><span class="cap success"><span class="dot success"></span>Green</span></td><td>Recurring burnt-Graham finds at nozzle (FSQA)</td><td>Claudio Tovar</td></tr>
+      <tr><td>L3</td><td>ML1</td><td><span class="cap warning"><span class="dot warning"></span>Yellow</span></td><td>Metal detector caught metal in a bar</td><td>Isis Oses</td></tr>
+      <tr><td>L3</td><td>ML4</td><td><span class="cap error"><span class="dot error"></span>Red</span></td><td>Cold cream + multiple alarms &mdash; line down</td><td>Itzel Chavez / Preston Elmer</td></tr>
+      <tr><td>L3</td><td>MF Matrix</td><td><span class="cap success"><span class="dot success"></span>Green</span></td><td>Cleaning-standard between SKUs question</td><td>Nathan Gevenois</td></tr>
+    </tbody>
+  </table>
+
+  <div class="sheet-footer"><span class="doc">Plant briefing &middot; 2026-05-01</span><span class="page-no">Page 3 of 4</span></div>
+</section>
+
+<!-- ============================================================
+     SHEET 4 — FSQA BRIEFING + ACTION ASSIGNMENTS
+     ============================================================ -->
+<section class="sheet">
+
+  <h2>FSQA briefing &mdash; priority alerts</h2>
+  <p>Food safety and quality lens for Kathleen Gilbert. Two items need eyes today: the L3 ML1 metal find, and the recurring burnt-Graham pattern on L2 Grinding.</p>
+
+  <div class="card alert-red">
+    <div class="alert-head"><h4>Alert 1 &mdash; Metal foreign object in bar</h4><span class="cap error"><span class="dot error"></span>L3 ML1 &middot; High</span></div>
+    <p><em>What happened:</em> At ~10:37 AM Mountain, the MD on L3 ML1 opened on a rejected bar. Isis Oses: "The metal detector opened up, and foreign material (metal) was found in one of the bars it rejected." QC is inspecting. Earlier in shift (~02:52 AM Mountain), there was also a camera alarm &mdash; manager, maintenance, QA, supervisor inspected; no issues found.</p>
+    <p><strong>FSQA questions:</strong> Source of metal &mdash; equipment shed, ingredient, or packaging? Single-piece event, or were earlier MD rejects not escalated? What window of finished goods needs hold? Has the bar been preserved? Connection to earlier camera alarm?</p>
+  </div>
+
+  <div class="card alert-yellow">
+    <div class="alert-head"><h4>Alert 2 &mdash; Recurring burnt Graham finds at nozzle</h4><span class="cap warning"><span class="dot warning"></span>L2 Grinding &middot; Medium</span></div>
+    <p><em>What happened:</em> Container 10139, lot FEB1727TA3. Claudio Tovar logged burnt/carbonized Graham pieces at the nozzle in three boxes (Box #3, Box #5, Box #17) of this third-shift run. <strong>Prior shift showed similar pattern at boxes #5, #20, #23.</strong> At least the second consecutive day on lot FEB1727TA3.</p>
+    <p><strong>FSQA questions:</strong> Equipment issue (heater scorching) or supplier issue (incoming lot already contains burnt material)? Open SCAR with the supplier? Quarantine the remaining lot? Frequency threshold to stop the run?</p>
+  </div>
+
+  <div class="card alert-yellow">
+    <div class="alert-head"><h4>Alert 3 &mdash; Bag-sealing failure with plastic FM on equipment</h4><span class="cap warning"><span class="dot warning"></span>L1 S3 Matrix 3 &middot; Medium</span></div>
+    <p><em>What happened:</em> Plastic stuck on Matrix 3 sealing plates caused bag-seal failures. <strong>318 scrap bags accumulated by 8:00 AM</strong> before the operator scraped it off and verified sealing returned to spec.</p>
+    <p><strong>FSQA questions:</strong> Where did the plastic originate &mdash; film, gloves, equipment shroud? Did any bag get sealed with plastic in/on it before the issue was caught? Add a pre-shift sealing-plate inspection to the start-up checklist?</p>
+  </div>
+
+  <div class="audience-grid">
+    <div class="audience">
+      <div class="head"><i class="icon" data-lucide="check-circle"></i><div class="title">Quality deviations &mdash; monitoring</div></div>
+      <ul>
+        <li>L1 S1 water leak on new 7 pipe install &mdash; cleared, log seal replacement to commissioning file.</li>
+        <li>L1 S2 jar V3 spec change handled correctly (Angelica + Candon + Rafael).</li>
+        <li>L2 ML3 mixer dropped during disassembly &mdash; verify no fragments entered depositor.</li>
+        <li>L3 MF Matrix cleaning standard between SKUs &mdash; confirm Level 1 was correct level.</li>
+        <li>L3 MF Matrix residual product on date-change &mdash; turn into formal start-of-run sign-off step.</li>
+      </ul>
+    </div>
+    <div class="audience">
+      <div class="head"><i class="icon" data-lucide="award"></i><div class="title">Positive practices &mdash; reinforce</div></div>
+      <ul>
+        <li><strong>Isis Oses</strong> (L3 ML1) &mdash; opened MD on metal find, engaged QC, documented with photos.</li>
+        <li><strong>Claudio Tovar</strong> (L2 Grinding) &mdash; best documentation across all 11 chats.</li>
+        <li><strong>S3 Pack operator</strong> &mdash; caught and cleared sealing-plate plastic.</li>
+        <li><strong>Marcos Jimenez</strong> &mdash; verified before clearing the line.</li>
+        <li><strong>Angelica Perez</strong> &mdash; proper change-control on V3 jar.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Action assignments</h2>
+  <table class="actions">
+    <thead>
+      <tr><th class="priority">#</th><th>Action</th><th style="width: 24%;">Owner</th><th style="width: 11%;">Priority</th><th style="width: 13%;">Due</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="priority">1</td><td>Open FM incident record on the L3 ML1 metal find. Preserve the rejected bar. Determine hold window for finished goods.</td><td class="owner">FSQA &middot; Kathleen Gilbert</td><td><span class="cap error"><span class="dot error"></span>High</span></td><td>May 1</td></tr>
+      <tr><td class="priority">2</td><td>Decide disposition on L2 Grinding lot FEB1727TA3 &mdash; quarantine remaining lot or issue supplier SCAR with Claudio's photo evidence.</td><td class="owner">FSQA &middot; Kathleen Gilbert</td><td><span class="cap error"><span class="dot error"></span>High</span></td><td>May 4</td></tr>
+      <tr><td class="priority">3</td><td>Audit L1 S3 Matrix 3 sealing-plate inspection process. Add pre-shift visual check to start-up checklist.</td><td class="owner">Plant Manager &middot; L1</td><td><span class="cap warning"><span class="dot warning"></span>Medium</span></td><td>May 8</td></tr>
+      <tr><td class="priority">4</td><td>Implement materials-on-floor confirmation step before any FFS changeover starts.</td><td class="owner">Planning &middot; Scheduling</td><td><span class="cap warning"><span class="dot warning"></span>Medium</span></td><td>May 8</td></tr>
+      <tr><td class="priority">5</td><td>Review WH staging temperature for cream and chocolate ingredients ahead of run start. Same root cause hit ML2 and ML4.</td><td class="owner">COO &middot; Chad Stone</td><td><span class="cap warning"><span class="dot warning"></span>Medium</span></td><td>May 11</td></tr>
+      <tr><td class="priority">6</td><td>Confirm cleaning-level standard between SKUs on MF Matrix; close out Chad's open question in the cleaning matrix.</td><td class="owner">FSQA + Plant Manager &middot; L3</td><td><span class="cap success"><span class="dot success"></span>Low</span></td><td>May 15</td></tr>
+    </tbody>
+  </table>
+
+  <div class="footnote">
+    <strong>Sources.</strong> Microsoft Teams Information Exchange chats (11 chats, ~24-hour window through 11:23 AM Mountain May 1, 2026): L1 Sollich 1/2/3, L2 ML2/ML3/FFS/Grinding/Schedule, L3 ML1/ML4/MF Matrix. <strong>Methodology:</strong> automated pull via Graph API, narrative synthesis with Pareto weighting on top 2&ndash;3 drivers per line. <strong>Confidence:</strong> high on operational events explicitly logged in chat; medium on root-cause inferences (labeled as such); low on quantification (counts here are what was logged, not validated by ERP/SCADA).
+  </div>
+
+  <div class="sheet-footer"><span class="doc">Plant briefing &middot; 2026-05-01</span><span class="page-no">Page 4 of 4</span></div>
+</section>
+
+</div>
+<script>if (window.lucide) window.lucide.createIcons();</script>
+</body>
+</html>
